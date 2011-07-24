@@ -22,7 +22,7 @@ git clone https://markburns@github.com/markburns/rikaisama.git
 ```
 
 
-Ammending
+Amending
 =========
 
 * Open chrome
