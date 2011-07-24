@@ -1,54 +1,4 @@
-﻿/*
-
-   ---
-
-   Rikaisama
-   Copyleft - Mark Burns
-   http://github.com/markburns/rikaisama
-
-   see these guys |
-   v
-   ---
-
-   Rikaikun
-   Copyright (C) 2010 Erek Speed
-   http://code.google.com/p/rikaikun/
-
-   ---
-
-   Originally based on Rikaichan 1.07
-   by Jonathan Zarate
-   http://www.polarcloud.com/
-
-   ---
-
-   Originally based on RikaiXUL 0.4 by Todd Rudick
-   http://www.rikai.com/
-   http://rikaixul.mozdev.org/
-
-   ---
-
-   This program is free software; you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2 of the License, or
-   (at your option) any later version.
-
-   This program is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-   ---
-
-   Please do not change or remove any of the copyrights or links to web pages
-   when modifying any of the files. - Jon
-
-*/
-var rcxMain = {
+﻿var rcxMain = {
   haveNames: false,
   canDoNames: false,
   dictCount: 2,
@@ -57,13 +7,8 @@ var rcxMain = {
 
   loadDictionary: function() {
     if (!this.dict) {
-      /* if (typeof(rcxWordDict) == 'undefined') {
-         this.showDownload();
-         return false;
-         } */
       try {
-        this.dict = new rcxDict(false/*this.haveNames && !this.cfg.nadelay*/);
-        //this.dict.setConfig(this.dconfig);
+        this.dict = new rcxDict(false);
       }
       catch (ex) {
         alert('Error loading dictionary: ' + ex);
@@ -97,9 +42,7 @@ var rcxMain = {
   // Unlike rikaichan there is no lookup bar so this is the only enable.
   inlineEnable: function(tab, mode) {
     if (!this.dict) {
-      //  var time = (new Date()).getTime();
       if (!this.loadDictionary()) return;
-      //  time = (((new Date()).getTime() - time) / 1000).toFixed(2);
     }
 
     // Send message to current tab to add listeners and create stuff
