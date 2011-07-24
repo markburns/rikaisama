@@ -4,7 +4,7 @@ Rikaisama
 Mark Burns
 http://github.com/markburns/rikaisama
 
-see these guys
+see these guys for most of the credit
 v
 ---
 
