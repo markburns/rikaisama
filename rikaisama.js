@@ -28,7 +28,7 @@
   },
 
   miniHelp:
-    '<span style="font-weight:bold">Rikaikun enabled!</span><br><br>' +
+    '<span style="font-weight:bold">Rikaisama has entered the building!</span><br><br>' +
     '<table cellspacing=5>' +
     '<tr><td>A</td><td>Alternate popup location</td></tr>' +
     '<tr><td>Y</td><td>Move popup location down</td></tr>' +
@@ -38,7 +38,7 @@
     '<tr><td>N</td><td>Next word</td></tr>' +
     '</table>',
 
-  // Function which enables the inline mode of rikaikun
+  // Function which enables the inline mode of rikaisama
   // Unlike rikaichan there is no lookup bar so this is the only enable.
   inlineEnable: function(tab, mode) {
     if (!this.dict) {
