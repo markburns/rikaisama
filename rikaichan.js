@@ -1,51 +1,51 @@
 ﻿/*
 
-  ---
+   ---
 
-  Rikaisama
-  Copyleft - Mark Burns
-  http://github.com/markburns/rikaisama
+   Rikaisama
+   Copyleft - Mark Burns
+   http://github.com/markburns/rikaisama
 
-  see these guys |
-                 v
-  ---
+   see these guys |
+   v
+   ---
 
-  Rikaikun
-  Copyright (C) 2010 Erek Speed
-  http://code.google.com/p/rikaikun/
+   Rikaikun
+   Copyright (C) 2010 Erek Speed
+   http://code.google.com/p/rikaikun/
 
-  ---
+   ---
 
-  Originally based on Rikaichan 1.07
-  by Jonathan Zarate
-  http://www.polarcloud.com/
+   Originally based on Rikaichan 1.07
+   by Jonathan Zarate
+   http://www.polarcloud.com/
 
-  ---
+   ---
 
-  Originally based on RikaiXUL 0.4 by Todd Rudick
-  http://www.rikai.com/
-  http://rikaixul.mozdev.org/
+   Originally based on RikaiXUL 0.4 by Todd Rudick
+   http://www.rikai.com/
+   http://rikaixul.mozdev.org/
 
-  ---
+   ---
 
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 2 of the License, or
-  (at your option) any later version.
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
 
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
 
-  You should have received a copy of the GNU General Public License
-  along with this program; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-  ---
+   ---
 
-  Please do not change or remove any of the copyrights or links to web pages
-  when modifying any of the files. - Jon
+   Please do not change or remove any of the copyrights or links to web pages
+   when modifying any of the files. - Jon
 
 */
 var rcxMain = {
@@ -55,12 +55,12 @@ var rcxMain = {
   altView: 0,
   enabled: 0,
 
-loadDictionary: function() {
+  loadDictionary: function() {
     if (!this.dict) {
       /* if (typeof(rcxWordDict) == 'undefined') {
-        this.showDownload();
-        return false;
-      } */
+         this.showDownload();
+         return false;
+         } */
       try {
         this.dict = new rcxDict(false/*this.haveNames && !this.cfg.nadelay*/);
         //this.dict.setConfig(this.dconfig);
@@ -82,7 +82,7 @@ loadDictionary: function() {
       chrome.tabs.sendRequest(tabId, {"type":"enable", "config":rcxMain.config});
   },
 
-   miniHelp:
+  miniHelp:
     '<span style="font-weight:bold">Rikaikun enabled!</span><br><br>' +
     '<table cellspacing=5>' +
     '<tr><td>A</td><td>Alternate popup location</td></tr>' +
@@ -124,19 +124,19 @@ loadDictionary: function() {
 
     // Send a disable message to all browsers
     var windows = chrome.windows.getAll({"populate":true},
-      function(windows) {
-        for (var i =0; i < windows.length; ++i) {
-          var tabs = windows[i].tabs;
-          for ( var j = 0; j < tabs.length; ++j) {
-            chrome.tabs.sendRequest(tabs[j].id, {"type":"disable"});
+        function(windows) {
+          for (var i =0; i < windows.length; ++i) {
+            var tabs = windows[i].tabs;
+            for ( var j = 0; j < tabs.length; ++j) {
+              chrome.tabs.sendRequest(tabs[j].id, {"type":"disable"});
+            }
           }
-        }
-      });
+        });
   },
 
   inlineToggle: function(tab) {
     if (rcxMain.enabled) rcxMain.inlineDisable(tab, 1);
-      else rcxMain.inlineEnable(tab, 1);
+    else rcxMain.inlineEnable(tab, 1);
   },
 
   kanjiN: 1,
